@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigQuery Release Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-database"></i>
+                    <h1>BigQuery Release Notes</h1>
+                </div>
+                <button id="refresh-btn" class="btn-primary">
+                    <i class="fas fa-sync-alt" id="refresh-icon"></i>
+                    <span>Refresh</span>
+                </button>
+            </div>
+            <div class="header-glow"></div>
+        </header>
+
+        <main>
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+                <p>Fetching latest updates...</p>
+            </div>
+            
+            <div id="error-container" class="error-container hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="error-message"></p>
+                <button id="retry-btn" class="btn-secondary">Retry</button>
+            </div>
+
+            <div id="notes-container" class="notes-grid hidden">
+                <!-- Notes will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
